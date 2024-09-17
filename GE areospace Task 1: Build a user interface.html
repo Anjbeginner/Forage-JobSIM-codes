@@ -1,0 +1,20 @@
+<script setup>
+import { ref } from 'vue'
+
+const num1 = ref(0)
+const num2 = ref(0)
+const result = ref(null)
+
+function computeProduct() {
+  result.value = num1.value * num2.value;
+}
+</script>
+
+<template>
+  <h1>Compute Product</h1>
+  <img src="https://cdn.theforage.com/vinternships/companyassets/ay2tsYxaTif7Nt6z7/AA4Bnq2tJHALwE8cg/1680718790218/pexels-photo-14197334.jpeg"></img>
+  <p>Number 1: <input v-model="num1" /></p>
+  <p>Number 2: <input v-model="num2" /></p>
+  <button v-if="!result" @click="computeProduct">Compute Product</button>
+  <p v-else>Product: {{ result }}</p>
+</template>
